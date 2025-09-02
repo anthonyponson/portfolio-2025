@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
-
 body {
-  background: radial-gradient(circle at 30% 50%, #4c1d95 0%, #100a1f 40%);
+  /*
+    CORRECT GRADIENT: Centered on the screen (50% 50%)
+    and large enough (40%) to create a soft, wide glow.
+  */
+  background: radial-gradient(circle at 20% 50%, #39226b 0%, #100a1f 40%);
   color: #d1d5db; /* Default light gray text */
   min-height: 100vh;
   overflow-x: hidden;
