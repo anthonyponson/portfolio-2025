@@ -2,7 +2,8 @@
 
 
 body {
-  background: #100a1f;
-  color: #d1d5db; /* A light gray for default text */
+  background: radial-gradient(circle at 30% 50%, #4c1d95 0%, #100a1f 40%);
+  color: #d1d5db; /* Default light gray text */
+  min-height: 100vh;
   overflow-x: hidden;
 }
