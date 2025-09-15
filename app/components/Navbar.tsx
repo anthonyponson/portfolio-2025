@@ -1,53 +1,88 @@
-// app/components/Navbar.tsx
-import React from 'react';
-import Link from 'next/link';
+// // app/components/Navbar.tsx
+// import React from 'react';
+// import Link from 'next/link';
+
+// const Navbar = () => {
+//   const navLinks = ['Home', 'Services', 'About', 'Projects', 'Blogs', 'Testimonials'];
+
+//   return (
+//     <header className="w-full absolute top-0 left-0 z-50 py-8">
+//       <nav className="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center">
+//         {/* Logo */}
+//         <Link href="/" className="flex items-center gap-2">
+//           <span className="w-8 h-8 bg-accent rounded-full flex items-center justify-center text-white font-bold text-lg">
+//             O
+//           </span>
+//           <span className="text-xl font-bold text-white">Oliver.</span>
+//         </Link>
+
+//         {/* Desktop Navigation Links */}
+//         <div className="hidden md:flex items-center gap-8">
+//           {navLinks.map((link) => (
+//             <Link 
+//               key={link} 
+//               href={`#${link.toLowerCase()}`}
+//               className={`text-sm font-medium transition-colors duration-300 ${
+//                 link === 'Home' 
+//                 ? 'text-accent border-b-2 border-accent' 
+//                 : 'text-gray-300 hover:text-white'
+//               }`}
+//             >
+//               {link}
+//             </Link>
+//           ))}
+//         </div>
+
+//         {/* Contact Button */}
+//         <button className="hidden md:block bg-white text-black font-semibold py-2 px-5 rounded-full hover:bg-gray-200 transition-colors duration-300">
+//           Contact Me
+//         </button>
+//       </nav>
+//     </header>
+//   );
+// };
+
+// export default Navbar;
+
+
+"use client";
+import React from "react";
+import Link from "next/link";
 
 const Navbar = () => {
-  return (
-    <header className="absolute top-0 left-0 w-full z-50">
-      <nav className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-6">
-        <div className="flex justify-between items-center">
-          {/* Logo */}
-          <Link href="/" className="text-white text-3xl font-bold">
-            {/* Using an SVG for the logo as in the design */}
-            <svg 
-              width="32" 
-              height="32" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path 
-                d="M4 2L12 12L4 22" 
-                stroke="white" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
-              />
-              <path 
-                d="M20 2L12 12L20 22" 
-                stroke="white" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
-              />
-            </svg>
-          </Link>
+  const navLinks = ["Home", "Services", "About", "Projects", "Blogs", "Testimonials"];
 
-          {/* Navigation Links */}
-          <div className="hidden md:flex items-center space-x-12">
-            <Link href="#home" className="text-gray-300 hover:text-white transition-colors duration-300">
-              Home
-            </Link>
-            <Link href="#about" className="text-gray-300 hover:text-white transition-colors duration-300">
-              About
-            </Link>
-            <Link href="#lab" className="text-gray-300 hover:text-white transition-colors duration-300">
-              Lab
-            </Link>
+  return (
+    <header className="w-full fixed top-0 left-0 z-50 bg-white shadow-sm">
+      <div className="container mx-auto px-6 py-5 flex justify-between items-center">
+        {/* Logo */}
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 bg-brand-orange rounded-full flex items-center justify-center text-white font-bold text-lg">
+            O
           </div>
+          <span className="text-xl font-bold text-gray-900">Oliver.</span>
         </div>
-      </nav>
+
+        {/* Navigation */}
+        <nav className="hidden lg:flex gap-8 text-gray-800 font-medium">
+          {navLinks.map((link) => (
+            <Link
+              key={link}
+              href={`#${link.toLowerCase()}`}
+              className={`hover:text-brand-orange transition-colors ${
+                link === "Home" ? "nav-active" : ""
+              }`}
+            >
+              {link}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Contact Button */}
+        <button className="hidden lg:block bg-black hover:bg-brand-orange text-white font-semibold py-3 px-6 rounded-full transition-colors">
+          Contact Me
+        </button>
+      </div>
     </header>
   );
 };

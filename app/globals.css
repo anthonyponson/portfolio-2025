@@ -1,12 +1,46 @@
 @import "tailwindcss";
 
+/* body {
+  
+  background-color: #121212;
+  
+  color: #E5E7EB; 
+
+  
+  background-image: 
+    repeating-linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 80px),
+    repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 80px);
+  background-size: 80px 80px;
+}
+
+.nav-active {
+  color: #FF4F00;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+} */
+
+
+:root {
+  --brand-orange: #ff4f00;
+}
+
 body {
-  /*
-    CORRECT GRADIENT: Centered on the screen (50% 50%)
-    and large enough (40%) to create a soft, wide glow.
-  */
-  background: radial-gradient(circle at 20% 50%, #39226b 0%, #100a1f 40%);
-  color: #d1d5db; /* Default light gray text */
-  min-height: 100vh;
-  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  color: #111827; /* gray-900 */
+}
+
+/* Tailwind custom class */
+.bg-brand-orange {
+  background-color: var(--brand-orange);
+}
+.text-brand-orange {
+  color: var(--brand-orange);
+}
+
+/* Active Nav */
+.nav-active {
+  color: var(--brand-orange);
+  text-decoration: underline;
+  text-underline-offset: 6px;
 }

@@ -4,10 +4,9 @@ import HeroSection from './components/HeroSection';
 
 export default function Home() {
   return (
-    <main>
+    <main className="relative overflow-hidden">
       <Navbar />
       <HeroSection />
-      {/* Other sections of your portfolio will go here */}
     </main>
   );
 }
