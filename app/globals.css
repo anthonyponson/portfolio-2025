@@ -20,17 +20,17 @@
 } */
 
 
-:root {
+/* :root {
   --brand-orange: #ff4f00;
 }
 
 body {
   font-family: 'Inter', sans-serif;
   background-color: #ffffff;
-  color: #111827; /* gray-900 */
+  color: #111827; /
 }
 
-/* Tailwind custom class */
+
 .bg-brand-orange {
   background-color: var(--brand-orange);
 }
@@ -38,9 +38,8 @@ body {
   color: var(--brand-orange);
 }
 
-/* Active Nav */
 .nav-active {
   color: var(--brand-orange);
   text-decoration: underline;
   text-underline-offset: 6px;
-}
+} */
