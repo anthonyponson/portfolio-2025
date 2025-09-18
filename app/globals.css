@@ -19,27 +19,3 @@ body {
   text-underline-offset: 6px;
 }
 
-
-/* :root {
-  --brand-orange: #ff4f00;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #ffffff;
-  color: #111827; /
-}
-
-
-.bg-brand-orange {
-  background-color: var(--brand-orange);
-}
-.text-brand-orange {
-  color: var(--brand-orange);
-}
-
-.nav-active {
-  color: var(--brand-orange);
-  text-decoration: underline;
-  text-underline-offset: 6px;
-} */
