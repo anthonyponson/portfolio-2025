@@ -10,8 +10,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // The bright orange accent color from the design
-        accent: '#FF4F00',
+        // A subtle, cool gray for accents, matching your new design
+        accent: {
+          DEFAULT: '#3B82F6', // A placeholder blue, we'll use grays mostly
+          dark: '#374151', // The dark gray for tags
+        },
+        // The main dark background color
+        primary: '#111827',
       },
     },
   },

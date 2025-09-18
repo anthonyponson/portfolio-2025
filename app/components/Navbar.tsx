@@ -10,7 +10,7 @@ const Navbar = () => {
       <nav className="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <span className="w-8 h-8 bg-accent rounded-full flex items-center justify-center text-white font-bold text-lg">
+          <span className="w-8 h-8 border-2 border-gray-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
             O
           </span>
           <span className="text-xl font-bold text-white">Oliver.</span>
@@ -24,8 +24,8 @@ const Navbar = () => {
               href={`#${link.toLowerCase()}`}
               className={`text-sm font-medium transition-colors duration-300 ${
                 link === 'Home' 
-                ? 'text-accent border-b-2 border-accent' 
-                : 'text-gray-300 hover:text-white'
+                ? 'text-white border-b-2 border-white' 
+                : 'text-gray-400 hover:text-white'
               }`}
             >
               {link}
@@ -34,7 +34,7 @@ const Navbar = () => {
         </div>
 
         {/* Contact Button */}
-        <button className="hidden md:block bg-white text-black font-semibold py-2 px-5 rounded-full hover:bg-gray-200 transition-colors duration-300">
+        <button className="hidden md:block bg-white text-black font-semibold py-2 px-5 rounded-full hover:bg-gray-300 transition-colors duration-300">
           Contact Me
         </button>
       </nav>
@@ -43,5 +43,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
