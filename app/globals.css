@@ -1,15 +1,15 @@
 /* app/globals.css */
 
 /* 
-  This single line imports all necessary Tailwind styles: base, components, and utilities.
-  This is the modern replacement for the three @tailwind directives.
+  1. THE CORRECT ENTRY POINT
+  This single line imports all necessary Tailwind styles.
 */
 @import "tailwindcss";
 
 /*
-  As per the documentation, we define our theme variables (design tokens) here.
-  Tailwind will see these and automatically generate utility classes for us.
-  e.g., --color-background creates bg-background, text-background, border-background, etc.
+  2. THEME DEFINITION
+  We define our custom design tokens here. Tailwind will automatically
+  create utility classes like `bg-background`, `text-primary`, etc., from these.
 */
 @theme {
   --color-background: #1D232A;
@@ -19,14 +19,16 @@
 }
 
 /*
-  Now we apply the utility classes that Tailwind generated from our @theme block.
-  This is the correct way to set global styles.
+  3. GLOBAL STYLES
+  We apply our newly generated utility classes to global elements like the body.
 */
 body {
   @apply bg-background text-primary;
 }
 
-/* Animation for the rotating "Hire Me" badge */
+/*
+  4. ANIMATIONS (as before)
+*/
 @keyframes rotate {
   from {
     transform: rotate(0deg);
