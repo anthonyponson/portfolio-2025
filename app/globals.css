@@ -1,34 +1,29 @@
 /* app/globals.css */
 
-/* 
-  1. THE CORRECT ENTRY POINT
-  This single line imports all necessary Tailwind styles.
-*/
+/* 1. Import all of Tailwind's styles */
 @import "tailwindcss";
 
-/*
-  2. THEME DEFINITION
-  We define our custom design tokens here. Tailwind will automatically
-  create utility classes like `bg-background`, `text-primary`, etc., from these.
-*/
+/* 2. Define our new Dark UI theme with an orange accent */
 @theme {
-  --color-background: #1D232A;
-  --color-primary: #F9FAFB;
-  --color-secondary: #9CA3AF;
-  --color-accent: #374151;
+  --color-background: #0D1117;  /* A deep, modern dark blue/gray */
+  --color-primary: #F9FAFB;     /* A bright, clean off-white for text */
+  --color-secondary: #9CA3AF;   /* A dimmer gray for subtitles and less important text */
+  --color-accent: #FF4F00;       /* The vibrant orange from your design */
+  --color-dark: #1F2937;        /* A dark gray for UI elements like tags */
 }
 
-/*
-  3. GLOBAL STYLES
-  We apply our newly generated utility classes to global elements like the body.
-*/
+/* 3. Apply the base styles to the body */
 body {
   @apply bg-background text-primary;
+
+  /* This creates the subtle grid pattern from the design */
+  background-image: 
+    linear-gradient(to right, rgba(249, 250, 251, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(249, 250, 251, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
-/*
-  4. ANIMATIONS (as before)
-*/
+/* 4. Animation for the rotating "Hire Me" badge */
 @keyframes rotate {
   from {
     transform: rotate(0deg);
