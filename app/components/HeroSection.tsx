@@ -2,9 +2,43 @@
 import React from 'react';
 import Image from 'next/image';
 import { Facebook, Twitter, Instagram, ArrowRight, Plus } from 'lucide-react';
+
 const HeroSection = () => {
   return (
+    // The `relative` and `overflow-hidden` classes are crucial for containing the effect
     <main className="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-16 px-6 lg:px-8 overflow-hidden">
+      
+      {/* --- THE NEW BACKGROUND EFFECT --- */}
+      {/* This div creates the big grid pattern. It's absolutely positioned to fill the section. */}
+      <div 
+        className="absolute inset-0 z-[-1]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(249, 250, 251, 0.05) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(249, 250, 251, 0.05) 1px, transparent 1px)
+          `,
+          // --- MAKE THE SQUARES EVEN BIGGER ---
+          backgroundSize: '100px 100px', // Increased to 100px
+        }}
+      />
+      {/* This div creates the "spotlight" fade effect directly behind the content. */}
+      <div 
+        className="absolute inset-0 z-[-1]"
+        style={{
+          // --- FADE BEHIND THE HERO TEXT AND IMAGE ---
+          // This radial gradient is centered and fades to the solid background color.
+          backgroundImage: `
+            radial-gradient(
+              ellipse at 50% 50%,
+              transparent 0%,
+              transparent 30%,
+              var(--color-background) 65%
+            )
+          `,
+        }}
+      />
+
+      {/* --- Main Content Grid (no changes below this line) --- */}
       <div className="max-w-7xl w-full mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
         
         <div className="md:col-span-3 space-y-12">
