@@ -7,7 +7,7 @@ const HeroSection = () => {
   return (
     <main className="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-16 px-6 lg:px-8 overflow-hidden">
       
-      {/* Background Grid & Fade Effect (This part is correct and remains) */}
+      {/* The Background Grid - This is now a simple, consistent grid */}
       <div 
         className="absolute inset-0 z-[-1]"
         style={{
@@ -15,29 +15,15 @@ const HeroSection = () => {
             linear-gradient(to right, rgba(249, 250, 251, 0.05) 1px, transparent 1px),
             linear-gradient(to bottom, rgba(249, 250, 251, 0.05) 1px, transparent 1px)
           `,
-          backgroundSize: '100px 100px',
-        }}
-      />
-      <div 
-        className="absolute inset-0 z-[-1]"
-        style={{
-          backgroundImage: `
-            radial-gradient(
-              ellipse at 50% 50%,
-              transparent 0%,
-              transparent 30%,
-              var(--color-background) 65%
-            )
-          `,
+          backgroundSize: '80px 80px',
         }}
       />
 
-      {/* --- Main Content Container --- */}
-      <div className="relative max-w-7xl w-full mx-auto flex justify-center">
+      {/* --- Main Content Grid --- */}
+      <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         
-        {/* --- Left Column (Testimonial) --- */}
-        {/* This is now absolutely positioned on large screens to match the design */}
-        <div className="hidden lg:block absolute top-1/2 -translate-y-1/2 left-0 w-64 space-y-8">
+        {/* --- Left Column (Testimonial & Reviews) --- */}
+        <div className="lg:col-span-3 space-y-8 text-center lg:text-left">
           <div className="text-left">
             <span className="text-accent text-5xl font-serif">“</span>
             <p className="text-base font-medium text-primary">Oliver's Remarkable Design Transformed Our Website – Highly Recommended!</p>
@@ -51,19 +37,23 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* --- Center Column (The main focus) --- */}
-        <div className="flex flex-col items-center text-center max-w-lg">
+        {/* --- Center Column (Main Text & Image) --- */}
+        <div className="lg:col-span-6 flex flex-col items-center text-center">
           <div className="flex items-center gap-2 mb-4">
             <span className="w-10 h-px bg-accent"></span>
             <p className="font-semibold text-secondary">Hello There!</p>
           </div>
-          <h1 className="text-6xl lg:text-7xl font-bold text-primary leading-tight">I'm <span className="text-accent">Oliver Scott</span></h1>
-          <p className="text-lg text-secondary mt-2">Product Designer based in USA</p>
+          <h1 className="text-6xl lg:text-8xl font-bold text-primary leading-none">
+            I'm <span className="text-accent">Oliver</span>
+            <br/>
+            <span>Scott</span>
+          </h1>
+          <p className="text-lg text-secondary mt-4">Product Designer based in USA</p>
           
           {/* --- IMAGE CONTAINER WITH BLOB --- */}
           <div className="relative mt-10">
             
-            {/* THE BLOB: Positioned absolutely behind the image */}
+            {/* THE BLOB: Correctly implemented and visible */}
             <div className="absolute inset-0 flex items-center justify-center z-0">
               <svg width="350" height="350" viewBox="0 0 500 500" className="w-full h-full">
                 <path 
@@ -92,8 +82,7 @@ const HeroSection = () => {
         </div>
 
         {/* --- Right Column (Skills & Socials) --- */}
-        {/* This is also absolutely positioned on large screens */}
-        <div className="hidden lg:block absolute top-1/2 -translate-y-1/2 right-0 w-64 space-y-16">
+        <div className="lg:col-span-3 flex flex-col items-center lg:items-start space-y-16">
           <div className="flex flex-col items-start gap-4">
             <div className="flex items-center gap-3"><span className="bg-dark text-primary text-sm font-semibold px-4 py-2 rounded-full">Prototype</span><span className="bg-accent text-primary text-sm font-semibold px-4 py-2 rounded-full">Dashboard</span></div>
             <div className="flex items-center gap-3"><span className="bg-accent text-primary p-2 rounded-full"><Plus size={16}/></span><span className="bg-dark text-primary text-sm font-semibold px-4 py-2 rounded-full">Mobile App Design</span></div>
@@ -119,4 +108,5 @@ const HeroSection = () => {
     </main>
   );
 };
-export default HeroSection;
+export default HeroSection
+
