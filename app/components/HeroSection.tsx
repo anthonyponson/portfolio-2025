@@ -7,9 +7,9 @@ const HeroSection = () => {
   return (
     <main className="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-16 px-6 lg:px-8 overflow-hidden">
       
-      {/* The Background Grid - This is now a simple, consistent grid */}
+      {/* Fading Grid (This is correct and remains unchanged) */}
       <div 
-        className="absolute inset-0 z-[-1]"
+        className="absolute inset-0 z-[-2]"
         style={{
           backgroundImage: `
             linear-gradient(to right, rgba(249, 250, 251, 0.05) 1px, transparent 1px),
@@ -18,11 +18,23 @@ const HeroSection = () => {
           backgroundSize: '80px 80px',
         }}
       />
+      <div 
+        className="absolute inset-0 z-[-1]"
+        style={{
+          backgroundImage: `
+            radial-gradient(
+              ellipse at 50% 50%,
+              transparent 0%,
+              transparent 35%,
+              var(--color-background) 70%
+            )
+          `,
+        }}
+      />
 
       {/* --- Main Content Grid --- */}
       <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         
-        {/* --- Left Column (Testimonial & Reviews) --- */}
         <div className="lg:col-span-3 space-y-8 text-center lg:text-left">
           <div className="text-left">
             <span className="text-accent text-5xl font-serif">“</span>
@@ -37,7 +49,6 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* --- Center Column (Main Text & Image) --- */}
         <div className="lg:col-span-6 flex flex-col items-center text-center">
           <div className="flex items-center gap-2 mb-4">
             <span className="w-10 h-px bg-accent"></span>
@@ -50,20 +61,30 @@ const HeroSection = () => {
           </h1>
           <p className="text-lg text-secondary mt-4">Product Designer based in USA</p>
           
-          {/* --- IMAGE CONTAINER WITH BLOB --- */}
           <div className="relative mt-10">
             
-            {/* THE BLOB: Correctly implemented and visible */}
-            <div className="absolute inset-0 flex items-center justify-center z-0">
-              <svg width="350" height="350" viewBox="0 0 500 500" className="w-full h-full">
+            {/* --- THE FIX IS HERE: BLOB WITH VISIBLE PATTERN --- */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] z-0">
+              <svg viewBox="0 0 500 500" className="w-full h-full">
+                <defs>
+                  <pattern id="blobPattern" patternUnits="userSpaceOnUse" width="20" height="20">
+                    {/* The orange background of the pattern */}
+                    <rect width="20" height="20" fill="var(--color-accent)" />
+                    {/* 
+                      THE FIX: The wavy line now uses a semi-transparent WHITE stroke.
+                      This makes it visible against the orange background.
+                    */}
+                    <path d="M 0 10 C 5 0, 15 20, 20 10" stroke="#FFFFFF4D" strokeWidth="1.5" fill="none" />
+                  </pattern>
+                </defs>
+                {/* The main blob path is now filled with our corrected, visible pattern */}
                 <path 
-                  fill="var(--color-accent)" 
+                  fill="url(#blobPattern)" 
                   d="M393.5,324Q342,408,251,420.5Q160,433,111,341.5Q62,250,112.5,163Q163,76,256.5,77.5Q350,79,400.5,164.5Q451,250,393.5,324Z" 
                 />
               </svg>
             </div>
             
-            {/* THE IMAGE: Circular and on top of the blob */}
             <Image 
               src="/images/profile.jpeg" 
               alt="Oliver Scott" 
@@ -73,7 +94,6 @@ const HeroSection = () => {
               priority
             />
 
-            {/* CTA Buttons */}
             <div className="absolute bottom-[-1rem] left-1/2 -translate-x-1/2 z-20 flex items-center bg-dark/50 backdrop-blur-sm border border-accent rounded-full p-1.5">
               <button className="bg-dark text-primary py-2 px-6 rounded-full flex items-center gap-2 text-sm font-semibold">Portfolio <span className="bg-accent text-primary w-5 h-5 rounded-full flex items-center justify-center"><ArrowRight size={12} /></span></button>
               <button className="text-primary py-2 px-6 text-sm font-semibold">Hire Me</button>
@@ -81,7 +101,6 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* --- Right Column (Skills & Socials) --- */}
         <div className="lg:col-span-3 flex flex-col items-center lg:items-start space-y-16">
           <div className="flex flex-col items-start gap-4">
             <div className="flex items-center gap-3"><span className="bg-dark text-primary text-sm font-semibold px-4 py-2 rounded-full">Prototype</span><span className="bg-accent text-primary text-sm font-semibold px-4 py-2 rounded-full">Dashboard</span></div>
@@ -97,7 +116,6 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* --- Rotating Hire Me Badge --- */}
       <div className="absolute top-32 right-16 w-32 h-32 hidden lg:block">
         <svg viewBox="0 0 100 100" className="animate-rotate-slow">
           <defs><path id="circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/></defs>
@@ -108,5 +126,4 @@ const HeroSection = () => {
     </main>
   );
 };
-export default HeroSection
-
+export default HeroSection;
