@@ -63,21 +63,19 @@ const HeroSection = () => {
           
           <div className="relative mt-10">
             
-            {/* --- THE FIX IS HERE: BLOB WITH VISIBLE PATTERN --- */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] z-0">
+            {/* --- THE FIX IS HERE: LARGER BLOB CONTAINER --- */}
+            {/* 
+              This container is now much larger (450px) than the image (300px),
+              ensuring its edges will be visible behind the image's square frame.
+            */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] z-0">
               <svg viewBox="0 0 500 500" className="w-full h-full">
                 <defs>
                   <pattern id="blobPattern" patternUnits="userSpaceOnUse" width="20" height="20">
-                    {/* The orange background of the pattern */}
-                    <rect width="20" height="20" fill="var(--color-accent)" />
-                    {/* 
-                      THE FIX: The wavy line now uses a semi-transparent WHITE stroke.
-                      This makes it visible against the orange background.
-                    */}
+                    <rect width="20" height="20" fill="#FF4F00" />
                     <path d="M 0 10 C 5 0, 15 20, 20 10" stroke="#FFFFFF4D" strokeWidth="1.5" fill="none" />
                   </pattern>
                 </defs>
-                {/* The main blob path is now filled with our corrected, visible pattern */}
                 <path 
                   fill="url(#blobPattern)" 
                   d="M393.5,324Q342,408,251,420.5Q160,433,111,341.5Q62,250,112.5,163Q163,76,256.5,77.5Q350,79,400.5,164.5Q451,250,393.5,324Z" 
@@ -85,8 +83,9 @@ const HeroSection = () => {
               </svg>
             </div>
             
+            {/* The Image remains 300x300 */}
             <Image 
-              src="/images/profile.jpeg" 
+              src="/images/profile.png" 
               alt="Oliver Scott" 
               width={300} 
               height={300} 
