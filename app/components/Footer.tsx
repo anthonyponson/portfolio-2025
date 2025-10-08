@@ -26,6 +26,7 @@ const Footer = () => {
           Interested in Hiring me?
         </h2>
 
+
         {/* --- PRIMARY ACTION: Download Resume Button --- */}
         <div className="mt-12">
           <a 
@@ -45,14 +46,14 @@ const Footer = () => {
             className="group flex items-center gap-3 text-lg text-secondary hover:text-primary transition-colors duration-300"
           >
             <Mail size={24} className="text-accent" />
-            <span>your-email@example.com</span>
+            <span>antonyponson@gmail.com</span>
           </a>
           <a 
             href="tel:+1234567890" 
             className="group flex items-center gap-3 text-lg text-secondary hover:text-primary transition-colors duration-300"
           >
             <Phone size={24} className="text-accent" />
-            <span>+1 (234) 567-890</span>
+            <span>7639369679</span>
           </a>
         </div>
 
@@ -63,10 +64,10 @@ const Footer = () => {
           </p>
           <div className="flex gap-6 order-1 sm:order-2">
             {/* LinkedIn is crucial for job hunting */}
-            <a href="#" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-accent transition-colors duration-300">
+            <a href="https://www.linkedin.com/in/anthonyponson/" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-accent transition-colors duration-300">
               <Linkedin size={24} />
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-accent transition-colors duration-300">
+            <a href="https://www.instagram.com/antonyponson/?next=%2F" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-accent transition-colors duration-300">
               <Instagram size={24} />
             </a>
           </div>
