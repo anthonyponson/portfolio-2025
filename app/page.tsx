@@ -4,6 +4,7 @@ import HeroSection from './components/HeroSection';
 import ServicesSection from './components/ServicesSection';
 import ToolsSection from './components/ToolsSection'; // 1. Import the new component
 import ProjectsSection from './components/ProjectsSection';
+import Footer from './components/Footer';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <ServicesSection />
       <ToolsSection /> {/* 2. Add it to the page */}
       <ProjectsSection />
+      <Footer/>
     </>
   );
-}
+} 
